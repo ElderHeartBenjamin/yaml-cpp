@@ -1,7 +1,7 @@
 project "yaml-cpp"
 	kind "StaticLib"
 	language "C++"
-    staticruntime "on"
+    staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -28,7 +28,7 @@ project "yaml-cpp"
 		systemversion "latest"
 
 	filter "system:linux"
-		pic "On"
+		pic "on"
 		systemversion "latest"
 
 	filter "configurations:Debug"
@@ -41,4 +41,4 @@ project "yaml-cpp"
 
 	filter "configurations:Dist"
 		runtime "Release"
-		optimize "on"
+		optimize "full"
